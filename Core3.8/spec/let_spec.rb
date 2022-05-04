@@ -1,0 +1,12 @@
+$count = 0
+describe "let" do
+  let(:count) { $count += 1 }
+
+  it "memorizes the value" do
+    count.should eq(1)
+    count.should eq(1)
+  end
+  it "is not cached across examples" do
+    count.should eq(2)
+  end
+end
